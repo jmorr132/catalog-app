@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container item-tag text-center">
+    <h2> Are You sure you want to delete {{item.title}}</h2>
+    <button class='btn btn-default'>
+        <form action ='#' method = 'post'>
+            <input type = 'submit', value = 'Delete'>
+        </form>
+    </button>
+    <button class="btn btn-default">
+        <a href="{{url_for('showItems')}}"> Cancel </a>
+    </button>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% include "header.html" %}
+{% block content %}
+<div class="contatiner">
+    <div class = "flash">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li> <strong> {{message}} </strong> </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %} 
+    </div>
+</div>
+<div class ="row text-center">
+    <h2>Things for Sale </h2>
+    <hr>
+    <button class="btn btn-default">
+        <a href="{{url_for('newItem')}}"><p>List a New Item For sale!</p></a>
+    </button>
+</div>
+<div class="container">
+        {% for item in item %}
+            <div class="row item-tag">
+                <div class ="row">
+                    <div class="col-md-12 text-center">
+                     <h1>{{item.title}}</h1>
+                    </div>
+                    <br>
+                </div>
+                <div class = "col-md-6">
+                    <img class= "img-responsive img-rounded item-img" src = {{item.itemPicture}} alt="item-image"/>
+                </div>
+                <div class = "col-md-6">
+                    <h2>Price : {{item.price}}</h2>
+                    <button class="btn btn-default">
+                            <a href="{{url_for('showItemDetail', item_id = item.id)}}"> Buy me!</a>
+                    </button>
+                    <button class="btn btn-default">
+                        <a href="{{url_for('editItem', item_id = item.id)}}"> Edit me!</a>
+                    </button>
+                    <button class="btn btn-default">
+                        <a href="{{url_for('deleteItem', item_id = item.id)}}"> Delete me!</a>
+                    </button>
+                </div>
+            </div> 
+            </br>
+        {% endfor %} 
+</div> 
+
+{% endblock %}

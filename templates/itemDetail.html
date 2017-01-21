@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+<div class = "container item-tag text-center">
+    {% for i in item %}
+        <h1>{{i.title}}</h1>
+        <img class="img-responsive item-img"src = {{i.itemPicture}} alt="item picture" />
+        <p>Price: {{i.price}}</p>
+        <h2>Description</h2>
+        <p>{{i.itemtype}}</p>
+        <p>{{i.description}}</p>
+        <br>
+        <div>
+            <h2> Location </h2>      
+            <p>{{i.location}}</p>
+            <h4> Contact Me </h4>
+            <p>{{i.contactinfo}}</p>
+        </div>
+          <button class = 'btn btn-default'>
+            <a href="{{url_for('showItems')}}">No Thanks! </a>
+         </button>   
+    {% endfor %}
+</div>
+{% endblock %}

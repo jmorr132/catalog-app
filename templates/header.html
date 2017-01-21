@@ -1,0 +1,30 @@
+<div class="container">
+    <section class="row nav-bar">
+            <div class="col-md-12 text-center title">
+                <h1> TRASH FOR CASH $$$ </h1>
+            </div> 
+        <div class = "row login text-left">
+            {%if 'username' not in session %}
+            <button class="btn btn-default">
+                <a href = "{{url_for('showLogin')}}"> Login</a>  
+            </button>
+              
+            {% else %}  
+                <div class= "col-md-4"> 
+                    <img class ="img-responsive profile-img " src = {{user.picture}} alt="profile image"/> 
+                </div>
+                    <div class="col-md-6">
+                            <p> {{user.name}} </p>   
+                            <button class='btn btn-default'>
+                                <a href="{{url_for('showItems')}}">Home</a>
+                            </button>
+                            <button class='btn btn-default'>
+                                <a href ="{{url_for('disconnect')}}"> Logout</a>
+                            </button>
+                    </div>
+            </div>
+            {% endif %}
+        </div>        
+                   
+    </section>
+</div>

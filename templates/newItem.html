@@ -1,0 +1,26 @@
+{% extends "main.html"%}
+{% block content %}
+<div class="container item-tag text-center">
+    <h1> List a New Item To sell! </h1>
+    <form action="#" method = 'post'>
+        <p>Title</p>
+            <input type ="text" size ="30" name="title">
+        <p>Picture URL </p>
+            <input type ="text" size= "30" name ="picture">
+        <p> Price </p>
+            <input type ="text" size= "30" name = "price">
+        <br>
+        <p> Description </p>
+            <textarea  name ="description"></textarea>
+        <p> Item Type </p>
+            <input type = "text" size = "30" name = "itemtype">
+        <p> Location </p>
+            <input type = "text" size = "30" name = "location">
+        <p> Contact Info </p>
+        <button class="btn btn-default">
+            <input type = "text" size = "30" name = "contactinfo">
+            <input type = "submit" value='Post'>
+        </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container item-tag text-center">
+    <div class="row">
+        <h2>Edit an Item for Sale</h2>
+    </di>
+    <form action="#" method = 'post'>
+            <p>Title:</p>
+                <input type = "text", size = "30" name ='title' placeholder = '{{item.title}}'>
+            <p>Picture URL:</p>
+                <input type ="text", size = "30" name = "itemPicture" placeholder ='{{item.itemPicture}}'>
+            <p>Price:</p>
+                <input type = "text", size = "30" name = "price" placeholder='{{item.price}}'>
+            <p>Item Type:</p>
+                <input type = "text", size = "30" name = "itemtype" placeholder = '{{item.itemtype}}'>
+            <p>Description:</p>
+                <textarea name = "description" placeholder = '{{item.description}}'></textarea>
+    <div class="row">
+        <button class='btn btn-default'>
+            <input type ="submit" value = 'Edit'>
+        </button>
+        <button class = 'btn btn-default'>
+            <a href="{{url_for('showItems')}}">Cancel </a>
+        </button>
+    </div>
+    </form>
+<div>
+{% endblock %} 
